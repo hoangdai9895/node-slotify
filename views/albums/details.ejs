@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+	  <div class="container-fluid over-flow-hidden">
+        <div class='row'>
+        
+        <a href="/albums" class='w-100'><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class='w-100 '></a>     </div>
+    </div>
+	<div class="container">
+			<h1 class='d-flex justify-content-between my-4'><%=album.artist %> - <%=album.title %> 	<a href="/albums" class="btn btn-info">Go Back</a></h1>
+			<div class="row album">
+				<div class="col-md-4">
+					<img src="/images/uploads/<%= album.cover %>" class='w-100 h-100 border'>
+				</div>
+				<div class="col-md-8">
+					<ul class="list-group">
+						<li class="list-group-item"><strong>Artist:</strong> <%= album.artist %></li>
+						<li class="list-group-item"><strong>Album:</strong> <%= album.title %></li>
+						<li class="list-group-item"><strong>Genre:</strong> <%= album.genre %></li>
+						<li class="list-group-item"><strong>Release Year:</strong> <%= album.year %></li>
+						<li class="list-group-item"><strong>Label:</strong> <%= album.label %></li>
+						<li class="list-group-item"><strong>Tracks:</strong> <%= album.tracks %></li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Album Info</h4>
+					<p><%= album.info %></p>
+				</div>
+			</div>
+		<br />
+			<hr />
+			<a href="/albums/edit/<%= album.id %>" class="btn btn-info">Edit</a> 
+			<a href="#" data-id="<%= album.id %>" class="delete-album btn btn-danger">Delete</a>
+	  </div>
+<% include ../partials/footer %>

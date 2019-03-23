@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+	
+	<%if(authdata) {%>
+	<%=authdata%>
+	<%}%>
+	<div class="col-md-12">
+	<div class="head ">
+				<a class="spotify-logo d-flex justify-content-center align-items-center w-100" href="/" >
+					<img src="https://img.icons8.com/ios/50/000000/spotify-filled.png">
+					<span class='text-dark font font-weight-bold display-4'>Slotify</span>
+				</a>
+		</div>
+	</div>
+	<div class="card w-50 mx-auto ">
+		<div class="card-body">
+			<p class='text-center'>To continue, log in to Slotify.</p>
+			<form method="post" action="/users/login">
+			<div class="form-group">
+					<input type="email" class="form-control" name="email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+					<button type="submit" class="btn btn-login my-3">Login</button>
+			</form>
+			<div class="divider"></div>
+			<div class="text-center py-2">
+				<p class="card-text">Don't have an account?</p>
+				<a href="/users/register" class="btn btn-goto-register text-uppercase">Sign up for Slotify</a>
+			</div>
+			
+		</div>
+	</div>
+
+
+	
+
+<% include ../partials/footer %>

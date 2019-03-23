@@ -1,0 +1,30 @@
+{
+    "name": "album",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "author": "hoangdai",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.3.0",
+        "body-parser": "*",
+        "connect-flash": "*",
+        "cookie-parser": "*",
+        "ejs": "*",
+        "express": "*",
+        "express-session": "*",
+        "express-validator": "*",
+        "firebase": "*",
+        "firebase-admin": "^7.1.1",
+        "morgan": "*",
+        "multer": "*",
+        "path": "*"
+    },
+    "devDependencies": {
+        "nodemon": "^1.18.10"
+    }
+}

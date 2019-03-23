@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Album</title>
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="">
+ <% if(page !== '/users/register' | page !== '/users/login'){ %>
+        <div class="container-fluid px-0  fixed-top top-nav">
+            <nav class="navbar navbar-expand-lg navbar-light mx-auto" style="max-width:1140px">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto  ">
+                <li class="nav-item active">
+                <a class="nav-link text-white " href="/">Album</a>
+                </li>
+                <% if(authdata == null) { %>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="/users/register">Register</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="/users/login">Login</a>
+                </li>
+                <% } else { %>
+                <li class="nav-item">
+                <a class="nav-link text-white" href="/users/logout">Logout</a>
+                </li>
+                <% } %>
+
+                </ul>
+                </div>
+                </nav>
+        </div>
+<% } %>
+    <!-- end nav -->
+    <% if(page == '/'){ %>
+    <div class="container-fluid">
+        <div class='row'>
+        
+        <a href="/albums" class='w-100'><img src="/images/banner.jpg" class='w-100'></a>     </div>
+    </div>
+         <% } %>
+    <div class="container-fluid px-0">
+ 
+
+        <% if(page == '/'){ %>
+            <div class="col-md-12">
+            <% if(authdata != null){ %>
+                <p class="well display-2 text-center my-5">Welcome, <%= user.first_name %> <%= user.last_name %></p>
+            <% } %>
+             <div class="container-fluid text-center mt-5">
+                 <a href="/genres" class="btn btn-outline-primary ">View Geners</a>
+                <a href="/albums" class="btn btn-outline-primary ">View Albums</a>  
+             </div>
+           
+            </div>
+    
+            <div class="col-md-12">
+                <%if (success_msg != false) {%>
+                    <div class="alert alert-success noti-btn fixed-top">
+                        <%=success_msg %>
+                    </div>
+                    <% }%>
+                        <%if (error_msg != false) {%>
+                            <div class="alert alert-denger noti-btn fixed-top">
+                                <%=error_msg %>
+                            </div>
+                            <% }%>
+                            <% } %>

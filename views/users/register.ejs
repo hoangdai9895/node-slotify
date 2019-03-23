@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+	<div class="col-md-12">
+		<div class="head ">
+					<a class="spotify-logo d-flex justify-content-center align-items-center w-100" href="/" >
+						<img src="https://img.icons8.com/ios/50/000000/spotify-filled.png">
+						<span class='text-dark font font-weight-bold display-4'>Slotify</span>
+					</a>
+			</div>
+	</div>
+		<div class="card w-50 mx-auto ">
+			<div class="card-body">
+				<form method="post" action="/users/register">
+					<div class="form-group">
+				
+						<input type="text" class="form-control" name="first_name" placeholder="First Name">
+					</div>
+					<div class="form-group">
+					
+						<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+					</div>
+					<div class="form-group">
+					
+						<input type="email" class="form-control" name="email" placeholder="Email">
+					</div>
+					<div class="form-group">
+
+						<input type="password" class="form-control" name="password" placeholder="Password">
+					</div>
+					<div class="form-group">
+
+						<input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+					</div>
+
+					<h3> Optional Info</h3>
+					<div class="form-group">
+			
+						<input type="text" class="form-control" name="location" placeholder="Location">
+					</div>
+					<div class="form-group">
+			
+						<input type="text" class="form-control" name="fav_genres" placeholder="Favorite Genres">
+					</div>
+					<div class="form-group">
+			
+						<input type="text" class="form-control" name="fav_artists" placeholder="Favorite Artists">
+					</div>
+					<div class='text-center'>
+						<button type="submit" class="btn btn-login my-3">Sing up</button>
+					</div>
+						<p class="card-text text-center">Already have an account? <a href='/users/login' class='mini-login'>Log in</a> </p>
+				</form>
+			</div>
+		</div>
+<% include ../partials/footer %>

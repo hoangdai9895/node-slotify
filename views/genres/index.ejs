@@ -1,0 +1,43 @@
+<% include ../partials/header.ejs %>
+<div class="container-fluid over-flow-hidden">
+        <div class='row'>
+        
+        <a href="/albums" class='w-100'><img src="https://images.unsplash.com/photo-1512143889056-b57b4153f038?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class='w-100'></a>     </div>
+    </div>
+    <div class="container">
+    <h1>Geners
+        <% if(authdata != null){ %>
+            
+        <% } %>
+    </h1>
+        <a href="/genres/add" class="btn btn-outline-success pull-right">Add Geners</a>
+        <a href="/albums" class="btn btn-outline-primary ">View Album</a>
+    <%if (success_msg != false) {%>
+    <div class="alert alert-success noti-btn fixed-top">
+        <%=success_msg %>
+    </div>
+    <% }%>
+    <table class="table table-striped mt-4">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i=0;i < genres.length;i++) { %>
+            <tr>
+                <td class='text-center'><%= genres[i].name %></td>
+                <td class='text-center'>
+                <% if(authdata != null){ %>
+                    <a href="/genres/edit/<%= genres[i].id %>" class="btn btn-primary">Edit</a>
+
+                    <a data-id="<%= genres[i].id %>"  class="btn btn-danger delete-genre">Delete</a>
+                    <% } %>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+ </div>
+    <% include ../partials/footer.ejs %>
